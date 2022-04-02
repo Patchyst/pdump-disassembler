@@ -62,7 +62,7 @@ int linear_disasm(char *sec_contents, size_t sec_size, csh dis_hd, cs_config *co
 	ins_n = cs_disasm(dis_hd, sec_contents, sec_size, config->vma, 0, &instructions);
 	if (ins_n <= 0)
 	{
-		fprintf(stderr, "Failed to disassemble chunk of code\n");
+		fprintf(stderr, "Failed to disassemble chunk of code (%ld)\n", ins_n);
 		return -1;
 	}
 	print_instructions(instructions, ins_n);
